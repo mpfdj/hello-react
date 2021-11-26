@@ -12,10 +12,12 @@ https://vercel.com/mpfdj/hello-react/settings
 # Using Heroku
 $ npx create-react-app@3.x hello-react
 $ cd hello-react
+
 $ git init
 $ git add .
 $ git commit -m "First commit"
 
+$ heroku login
 $ heroku create hello-react --buildpack mars/create-react-app
 
 $ git push heroku master
