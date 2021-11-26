@@ -15,7 +15,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Test automatic deploy on Heroku when pushing to master brach
+          Test automatic deploy on Heroku when pushing to master branch.
+          And testing automatic login with Github PAT.
         </a>
       </header>
     </div>
