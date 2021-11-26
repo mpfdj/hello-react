@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Hello world!
+          Test automatic deploy on Heroku when pushing to master brach
         </a>
       </header>
     </div>
