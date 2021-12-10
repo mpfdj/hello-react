@@ -6,7 +6,7 @@ function App() {
 
     return (
         <div className="App">
-            <div style={{width: 400}}>
+            <div style={{width: 400, height: 100}}>
                 <HelloForm/>
             </div>
         </div>

@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function HelloForm() {
     const [username, setUsername] = useState("");
     const [data, setData] = useState({});
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    // https://stackoverflow.com/questions/63906002/update-a-state-variable-only-on-loading-the-page-for-the-first-time-in-react-js
+    useEffect(() => {
+        setIsLoaded(true);
+    }, [])
 
     const handleChange = (e) => {
         setUsername(e.target.value);
@@ -18,10 +25,13 @@ function HelloForm() {
             .then(res => res.json())
             .then(
                 (result) => {
+                    setIsLoaded(true);
                     setData(result);
                 },
                 (error) => {
-                    console.log(error)
+                    setIsLoaded(true);
+                    console.log(error);
+                    setError(error);
                 }
             )
     }
@@ -34,7 +44,12 @@ function HelloForm() {
                 <Button variant="primary" type="submit">submit</Button>
             </Form>
             <div>
-                <pre>{data.hello}</pre>
+                {/* https://reactjs.org/docs/conditional-rendering.html */}
+
+                {!isLoaded
+                    ? <pre>Loading...</pre>
+                    : <pre>{data.hello}</pre>
+                }
             </div>
         </div>
     );
