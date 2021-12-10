@@ -26,3 +26,7 @@ $ git push heroku master
 $ heroku open
 
 $ heroku logs --tail
+
+
+# Create environment variables in React
+https://create-react-app.dev/docs/adding-custom-environment-variables/
